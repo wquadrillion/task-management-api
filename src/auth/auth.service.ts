@@ -31,11 +31,6 @@ export class AuthService {
   async register(userDto: CreateUserDto) {
     const { username, password } = userDto;
 
-    // Ensure the password is provided before hashing
-    if (!password || !username) {
-      throw new BadRequestException('Username & Password is required!');
-    }
-
     const existingUser = await this.usersService.findOne(username);
     if (existingUser) {
       throw new BadRequestException('Username already exists');
@@ -52,6 +47,6 @@ export class AuthService {
       sub: user.id,
     };
     const token = this.jwtService.sign(payload);
-    return { user, token };
+    return { token };
   }
 }
