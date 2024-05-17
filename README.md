@@ -22,7 +22,7 @@ This API provides a simple task management system with user authentication, task
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-repo/task-management-api.git
+   git clone git@github.com:wquadrillion/task-management-api.git
    cd task-management-api
    ```
 
